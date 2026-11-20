@@ -1,0 +1,357 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>asnew · To do</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600&family=Geist+Mono:wght@500&family=Instrument+Sans:wght@600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#EFEFEC; --surface:#FFFFFF; --soft:#F6F6F3; --ink:#1A1A1A; --ink2:#3A3A37;
+  --muted:#66665F; --line:#E3E1DA; --line2:#CFCDC6; --accent:#D7F25A; --on-accent:#1A1A1A;
+  --focus:#1A1A1A; --shadow:0 1px 2px rgba(20,20,18,.04),0 0 0 1px var(--line);
+}
+@media (prefers-color-scheme:dark){
+  :root{
+    --bg:#121211; --surface:#1A1A18; --soft:#22221F; --ink:#EDEDE8; --ink2:#C9C9C3;
+    --muted:#9A9A93; --line:#2A2A27; --line2:#3A3A36; --accent:#D7F25A; --on-accent:#1A1A1A;
+    --focus:#D7F25A; --shadow:0 0 0 1px var(--line);
+  }
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.5 'Geist',system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+.mono{font-family:'Geist Mono',ui-monospace,monospace;font-weight:500;letter-spacing:.06em;text-transform:uppercase}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--focus);outline-offset:2px;border-radius:6px}
+
+.wrap{max-width:780px;margin:0 auto;padding:0 16px 96px}
+.top{display:flex;justify-content:space-between;align-items:center;padding:22px 0 0}
+.brand{display:flex;align-items:baseline;gap:10px}
+.word{font-family:'Instrument Sans',sans-serif;font-weight:600;font-size:19px;letter-spacing:-.02em}
+.top .mono{font-size:10.5px;color:var(--muted)}
+
+.hero{padding:44px 0 22px}
+.hero h1{margin:0;font-weight:600;font-size:40px;line-height:1.02;letter-spacing:-.04em}
+.progress{display:flex;align-items:center;gap:14px;margin-top:18px}
+.bar{flex:1;height:6px;background:var(--line);border-radius:99px;overflow:hidden}
+.bar i{display:block;height:100%;width:0;background:var(--ink);border-radius:99px;transition:width .4s cubic-bezier(.2,.8,.2,1)}
+.progress .mono{font-size:10.5px;color:var(--muted);white-space:nowrap}
+
+.toolbar{position:sticky;top:0;z-index:5;background:var(--bg);padding:12px 0;display:flex;gap:10px;align-items:center;border-bottom:1px solid transparent;transition:border-color .2s}
+.toolbar.stuck{border-bottom-color:var(--line)}
+.chips{display:flex;gap:6px;overflow-x:auto;scrollbar-width:none;flex:1;min-width:0}
+.chips::-webkit-scrollbar{display:none}
+.chip{appearance:none;border:0;background:transparent;color:var(--ink2);font:500 13px/1 'Geist',sans-serif;padding:9px 12px;border-radius:99px;cursor:pointer;white-space:nowrap;display:flex;gap:7px;align-items:center;min-height:36px}
+.chip:hover{background:var(--soft)}
+.chip[aria-pressed="true"]{background:var(--ink);color:var(--bg)}
+.chip .n{font:500 10px/1 'Geist Mono',monospace;opacity:.6}
+.search{position:relative;flex:0 0 200px}
+.search input{width:100%;height:36px;border:0;border-radius:99px;background:var(--surface);box-shadow:var(--shadow);color:var(--ink);font:14px 'Geist',sans-serif;padding:0 34px 0 14px}
+.search input::placeholder{color:var(--muted)}
+.search kbd{position:absolute;right:10px;top:50%;transform:translateY(-50%);font:500 10px/1 'Geist Mono',monospace;color:var(--muted);border:1px solid var(--line2);border-radius:4px;padding:3px 5px}
+.search input:focus + kbd{display:none}
+
+.group{margin-top:30px}
+.group[hidden]{display:none}
+.ghead{display:flex;justify-content:space-between;align-items:baseline;padding:0 4px 10px}
+.ghead h2{margin:0;font-size:10.5px}
+.ghead span{font-size:12.5px;color:var(--muted)}
+.list{list-style:none;margin:0;padding:0;background:var(--surface);border-radius:14px;box-shadow:var(--shadow);overflow:hidden}
+
+.task{border-top:1px solid var(--line)}
+.task:first-child{border-top:0}
+.task[hidden]{display:none}
+.row{display:grid;grid-template-columns:auto minmax(0,1fr);align-items:start;gap:2px;padding:0 6px 0 14px}
+.check{position:relative;display:flex;align-items:center;justify-content:center;width:32px;height:52px;cursor:pointer;flex:none}
+.check input{position:absolute;inset:0;opacity:0;margin:0;cursor:pointer}
+.box{width:18px;height:18px;border-radius:5px;border:1.5px solid var(--line2);background:var(--surface);display:grid;place-items:center;transition:background .15s,border-color .15s,transform .15s}
+.box svg{opacity:0;transform:scale(.6);transition:opacity .15s,transform .2s cubic-bezier(.2,.8,.2,1)}
+.check:hover .box{border-color:var(--ink)}
+.check input:checked + .box{background:var(--ink);border-color:var(--ink)}
+.check input:checked + .box svg{opacity:1;transform:scale(1)}
+.check input:focus-visible + .box{outline:2px solid var(--focus);outline-offset:2px}
+.check input:disabled{cursor:default}
+.check input:active + .box{transform:scale(.9)}
+
+.head{appearance:none;border:0;background:transparent;color:inherit;text-align:left;font:inherit;cursor:pointer;display:grid;grid-template-columns:minmax(0,1fr) auto;gap:12px;align-items:start;padding:14px 8px 14px 6px;border-radius:10px;min-height:52px}
+.head:hover .t{text-decoration:underline;text-decoration-color:var(--line2);text-underline-offset:3px}
+.t{font-weight:600;font-size:15px;letter-spacing:-.01em;line-height:1.35}
+.badge{display:inline-block;font:500 9.5px/1 'Geist Mono',monospace;letter-spacing:.06em;text-transform:uppercase;background:var(--accent);color:var(--on-accent);padding:4px 6px 3px;border-radius:4px;margin-left:8px;vertical-align:2px}
+.s{display:block;font-size:13.5px;color:var(--muted);margin-top:3px;line-height:1.45}
+.meta{display:flex;align-items:center;gap:8px;padding-top:1px}
+.pill{font:500 10px/1 'Geist Mono',monospace;letter-spacing:.04em;color:var(--ink2);background:var(--soft);padding:5px 7px 4px;border-radius:6px;white-space:nowrap}
+.who{width:22px;height:22px;border-radius:50%;display:grid;place-items:center;font:600 10px/1 'Geist',sans-serif;background:var(--soft);color:var(--ink2);box-shadow:0 0 0 1px var(--line2)}
+.who.both{width:auto;padding:0 7px;border-radius:99px}
+.chev{color:var(--muted);transition:transform .25s cubic-bezier(.2,.8,.2,1);flex:none;margin-top:2px}
+.task.open .chev{transform:rotate(90deg)}
+.task.done .t{color:var(--muted);text-decoration:line-through;text-decoration-color:var(--line2)}
+.task.done .s{opacity:.75}
+
+.panel{display:grid;grid-template-rows:0fr;transition:grid-template-rows .28s cubic-bezier(.2,.8,.2,1)}
+.task.open .panel{grid-template-rows:1fr}
+.panel>div{overflow:hidden}
+.inner{padding:0 20px 20px 54px}
+.inner p{margin:0 0 10px;font-size:14px;color:var(--ink2);max-width:60ch}
+.facts{display:flex;flex-wrap:wrap;gap:6px 22px;margin:4px 0 14px}
+.facts div{font-size:13px}
+.facts .k{font-size:9.5px;color:var(--muted);display:block;margin-bottom:2px}
+.steps{list-style:none;margin:6px 0 14px;padding:0;border-top:1px solid var(--line)}
+.steps li{border-bottom:1px solid var(--line)}
+.steps label{display:grid;grid-template-columns:22px 26px minmax(0,1fr);gap:4px;align-items:start;padding:10px 0;font-size:14px;cursor:pointer;color:var(--ink2)}
+.steps .num{font:500 10px/1 'Geist Mono',monospace;color:var(--muted);padding-top:5px}
+.steps input{appearance:none;width:16px;height:16px;margin:2px 0 0;border:1.5px solid var(--line2);border-radius:4px;background:var(--surface);cursor:pointer;display:grid;place-items:center;transition:background .15s,border-color .15s}
+.steps input::after{content:"";width:8px;height:4px;border:solid var(--bg);border-width:0 0 1.8px 1.8px;transform:rotate(-45deg) translate(1px,-1px);opacity:0}
+.steps input:checked{background:var(--ink);border-color:var(--ink)}
+.steps input:checked::after{opacity:1}
+.steps input:checked ~ span{color:var(--muted);text-decoration:line-through;text-decoration-color:var(--line2)}
+.links{display:flex;flex-direction:column;gap:6px}
+.links a{font-size:13.5px;text-decoration:none;color:var(--ink);display:inline-flex;gap:6px;align-items:center;width:fit-content;border-bottom:1px solid var(--line2);padding-bottom:1px}
+.links a:hover{border-color:var(--ink)}
+.inner a[href^="tel:"]{text-decoration:underline;text-decoration-color:var(--line2);text-underline-offset:3px}
+
+.empty{display:none;text-align:center;padding:60px 0;color:var(--muted)}
+.empty.show{display:block}
+.foot{margin-top:40px;display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;font-size:12.5px;color:var(--muted)}
+.keys{display:flex;gap:12px;flex-wrap:wrap}
+.keys kbd{font:500 10px/1 'Geist Mono',monospace;border:1px solid var(--line2);border-radius:4px;padding:3px 5px;margin-right:4px;color:var(--ink2)}
+.err{padding:40px 0;color:var(--muted)}
+
+@media (max-width:640px){
+  .hero{padding:32px 0 16px}
+  .hero h1{font-size:32px}
+  .toolbar{flex-wrap:wrap}
+  .search{flex:1 1 100%;order:-1}
+  .search kbd,.keys{display:none}
+  .meta .pill.where{display:none}
+  .inner{padding:0 16px 18px 50px}
+  .row{padding-left:8px}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="top">
+    <div class="brand"><span class="word">asnew</span><span class="mono">To do</span></div>
+    <span class="mono" id="updated"></span>
+  </header>
+
+  <section class="hero">
+    <h1>What’s left.</h1>
+    <div class="progress" aria-live="polite"><div class="bar" aria-hidden="true"><i id="bar"></i></div><span class="mono" id="count"></span></div>
+  </section>
+
+  <div class="toolbar" id="toolbar">
+    <nav class="chips" id="chips" aria-label="Filter"></nav>
+    <div class="search">
+      <label class="sr" for="q">Search tasks</label>
+      <input id="q" type="search" placeholder="Search" autocomplete="off">
+      <kbd aria-hidden="true">/</kbd>
+    </div>
+  </div>
+
+  <main id="main"></main>
+  <p class="empty" id="empty"></p>
+
+  <footer class="foot">
+    <span>Ticks save on this device only. Tell Claude what’s done and the list updates for both of you.</span>
+    <span class="keys" aria-hidden="true"><span><kbd>/</kbd>search</span><span><kbd>j</kbd><kbd>k</kbd>move</span><span><kbd>↵</kbd>open</span><span><kbd>x</kbd>done</span></span>
+  </footer>
+</div>
+
+<script>
+(function(){
+  var STORE = 'asnewtodo:v1';
+  var state = load();
+  var data, filter = 'all', query = '';
+  var main = document.getElementById('main');
+
+  function load(){
+    try { var s = JSON.parse(localStorage.getItem(STORE)); if (s && s.done && s.steps) return s; } catch(e){}
+    return { done:{}, steps:{} };
+  }
+  function save(){ try { localStorage.setItem(STORE, JSON.stringify(state)); } catch(e){} }
+
+  function esc(s){ return String(s).replace(/[&<>"']/g, function(c){ return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]; }); }
+  function rich(s){
+    return esc(s).replace(/\b(1300 \d{3} \d{3}|13 \d{2} \d{2})\b/g, function(m){ return '<a href="tel:'+m.replace(/\s/g,'')+'">'+m+'</a>'; });
+  }
+  function initials(o){ return o === 'Both' ? 'Both' : o.charAt(0); }
+
+  var CHECK = '<svg width="11" height="11" viewBox="0 0 12 12" aria-hidden="true"><path d="M2.5 6.2l2.3 2.3 4.7-5" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" style="color:var(--bg)"/></svg>';
+  var CHEV = '<svg class="chev" width="14" height="14" viewBox="0 0 16 16" aria-hidden="true"><path d="M6 3.5L10.5 8 6 12.5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+
+  function isDone(t){ return !!t.done || !!state.done[t.id]; }
+  function stepState(t){ return state.steps[t.id] || []; }
+
+  function taskHTML(t){
+    var done = isDone(t), steps = t.steps || [], ss = stepState(t);
+    var stepsDone = steps.filter(function(_, i){ return ss[i]; }).length;
+    var meta = '';
+    if (steps.length) meta += '<span class="pill" data-steps>'+stepsDone+'/'+steps.length+'</span>';
+    if (t.when) meta += '<span class="pill">'+esc(t.when)+'</span>';
+    if (t.owner) meta += '<span class="who'+(t.owner==='Both'?' both':'')+'" title="'+esc(t.owner)+'">'+esc(initials(t.owner))+'</span>';
+    meta += CHEV;
+
+    var body = '';
+    var facts = [];
+    if (t.where) facts.push(['Where', t.where]);
+    if (t.cost) facts.push(['Cost', t.cost]);
+    if (t.owner) facts.push(['Who', t.owner === 'Both' ? 'Both of you' : t.owner]);
+    if (t.when) facts.push(['When', t.when]);
+    if (facts.length) body += '<div class="facts">' + facts.map(function(f){ return '<div><span class="k mono">'+f[0]+'</span>'+esc(f[1])+'</div>'; }).join('') + '</div>';
+    (t.body || []).forEach(function(p){ body += '<p>'+rich(p)+'</p>'; });
+    if (steps.length){
+      body += '<ol class="steps">' + steps.map(function(s, i){
+        return '<li><label><input type="checkbox" data-step="'+i+'"'+(ss[i]?' checked':'')+'><span class="num">'+(i<9?'0':'')+(i+1)+'</span><span>'+rich(s)+'</span></label></li>';
+      }).join('') + '</ol>';
+    }
+    if (t.links && t.links.length){
+      body += '<div class="links">' + t.links.map(function(l){ return '<a href="'+esc(l.url)+'" target="_blank" rel="noopener">'+esc(l.label)+' <span aria-hidden="true">↗</span></a>'; }).join('') + '</div>';
+    }
+
+    return '<li class="task'+(done?' done':'')+'" id="t-'+t.id+'" data-id="'+t.id+'">'
+      + '<div class="row">'
+      +   '<label class="check"><input type="checkbox"'+(done?' checked':'')+(t.done?' disabled':'')+' aria-label="Done: '+esc(t.title)+'"><span class="box">'+CHECK+'</span></label>'
+      +   '<button class="head" type="button" aria-expanded="false" aria-controls="p-'+t.id+'">'
+      +     '<span><span class="t">'+esc(t.title)+'</span>'+(t.badge?'<span class="badge">'+esc(t.badge)+'</span>':'')
+      +     (t.summary?'<span class="s">'+esc(t.summary)+'</span>':'')+'</span>'
+      +     '<span class="meta">'+meta+'</span>'
+      +   '</button>'
+      + '</div>'
+      + '<div class="panel" id="p-'+t.id+'" inert><div><div class="inner">'+body+'</div></div></div>'
+      + '</li>';
+  }
+
+  function render(){
+    document.getElementById('updated').textContent = 'Updated ' + data.updated;
+    var html = '';
+    data.groups.forEach(function(g){
+      var ts = data.tasks.filter(function(t){ return t.group === g.id; });
+      html += '<section class="group" data-group="'+g.id+'" aria-labelledby="g-'+g.id+'">'
+        + '<div class="ghead"><h2 class="mono" id="g-'+g.id+'">'+esc(g.label)+'</h2><span>'+esc(g.hint||'')+'</span></div>'
+        + '<ul class="list">' + ts.map(taskHTML).join('') + '</ul></section>';
+    });
+    main.innerHTML = html;
+
+    var chips = '<button class="chip" type="button" data-f="all" aria-pressed="true">All</button>';
+    data.groups.forEach(function(g){
+      var n = data.tasks.filter(function(t){ return t.group === g.id && (g.id === 'done' || !isDone(t)); }).length;
+      chips += '<button class="chip" type="button" data-f="'+g.id+'" aria-pressed="false">'+esc(g.short)+'<span class="n" data-n="'+g.id+'">'+n+'</span></button>';
+    });
+    document.getElementById('chips').innerHTML = chips;
+    progress();
+  }
+
+  function progress(){
+    var total = data.tasks.length;
+    var done = data.tasks.filter(isDone).length;
+    document.getElementById('bar').style.width = (total ? done/total*100 : 0) + '%';
+    document.getElementById('count').textContent = done + ' of ' + total + ' done';
+    data.groups.forEach(function(g){
+      var el = document.querySelector('[data-n="'+g.id+'"]');
+      if (!el) return;
+      el.textContent = data.tasks.filter(function(t){ return t.group === g.id && (g.id === 'done' || !isDone(t)); }).length;
+    });
+  }
+
+  function byId(id){ for (var i=0;i<data.tasks.length;i++) if (data.tasks[i].id === id) return data.tasks[i]; }
+
+  function setOpen(li, open){
+    var btn = li.querySelector('.head'), panel = li.querySelector('.panel');
+    li.classList.toggle('open', open);
+    btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+    if (open) panel.removeAttribute('inert'); else panel.setAttribute('inert', '');
+  }
+
+  function applyFilter(){
+    var q = query.trim().toLowerCase(), any = false;
+    document.querySelectorAll('.group').forEach(function(sec){
+      var gid = sec.getAttribute('data-group'), shown = 0;
+      sec.querySelectorAll('.task').forEach(function(li){
+        var t = byId(li.getAttribute('data-id'));
+        var hay = [t.title, t.summary, t.badge, t.owner, t.where, t.when].concat(t.body||[], t.steps||[]).join(' ').toLowerCase();
+        var ok = (filter === 'all' || filter === gid) && (!q || hay.indexOf(q) > -1);
+        li.hidden = !ok; if (ok) shown++;
+      });
+      sec.hidden = shown === 0; if (shown) any = true;
+    });
+    var empty = document.getElementById('empty');
+    empty.textContent = q ? 'Nothing matches “' + query.trim() + '”.' : 'Nothing here.';
+    empty.classList.toggle('show', !any);
+  }
+
+  main.addEventListener('click', function(e){
+    var head = e.target.closest('.head');
+    if (head){ var li = head.closest('.task'); setOpen(li, !li.classList.contains('open')); history.replaceState(null, '', li.classList.contains('open') ? '#'+li.getAttribute('data-id') : location.pathname); }
+  });
+
+  main.addEventListener('change', function(e){
+    var li = e.target.closest('.task'); if (!li) return;
+    var id = li.getAttribute('data-id'), t = byId(id);
+    if (e.target.hasAttribute('data-step')){
+      var i = +e.target.getAttribute('data-step');
+      var arr = state.steps[id] || []; arr[i] = e.target.checked; state.steps[id] = arr; save();
+      var n = (t.steps||[]).filter(function(_, k){ return arr[k]; }).length;
+      var pill = li.querySelector('[data-steps]'); if (pill) pill.textContent = n + '/' + t.steps.length;
+      return;
+    }
+    if (e.target.closest('.check')){
+      if (e.target.checked) state.done[id] = true; else delete state.done[id];
+      save(); li.classList.toggle('done', e.target.checked); progress();
+    }
+  });
+
+  document.getElementById('chips').addEventListener('click', function(e){
+    var b = e.target.closest('.chip'); if (!b) return;
+    filter = b.getAttribute('data-f');
+    document.querySelectorAll('.chip').forEach(function(c){ c.setAttribute('aria-pressed', c === b ? 'true' : 'false'); });
+    applyFilter();
+  });
+
+  var qEl = document.getElementById('q');
+  qEl.addEventListener('input', function(){ query = qEl.value; applyFilter(); });
+
+  function visibleHeads(){ return Array.prototype.filter.call(document.querySelectorAll('.task:not([hidden]) .head'), function(h){ return !h.closest('.group').hidden; }); }
+
+  document.addEventListener('keydown', function(e){
+    if (e.metaKey || e.ctrlKey || e.altKey) return;
+    var tag = (document.activeElement && document.activeElement.tagName) || '';
+    var typing = tag === 'INPUT' && document.activeElement.type !== 'checkbox' || tag === 'TEXTAREA';
+    if (e.key === 'Escape'){
+      if (typing){ qEl.value = ''; query = ''; applyFilter(); qEl.blur(); return; }
+      document.querySelectorAll('.task.open').forEach(function(li){ setOpen(li, false); });
+      return;
+    }
+    if (typing) return;
+    if (e.key === '/'){ e.preventDefault(); qEl.focus(); return; }
+    var heads = visibleHeads(), cur = document.activeElement && document.activeElement.closest ? document.activeElement.closest('.task') : null;
+    var idx = cur ? heads.indexOf(cur.querySelector('.head')) : -1;
+    if (e.key === 'j' || e.key === 'ArrowDown'){ e.preventDefault(); (heads[Math.min(idx+1, heads.length-1)] || heads[0]).focus(); return; }
+    if (e.key === 'k' || e.key === 'ArrowUp'){ e.preventDefault(); (heads[Math.max(idx-1, 0)] || heads[0]).focus(); return; }
+    if (e.key === 'x' && cur){ var cb = cur.querySelector('.check input'); if (!cb.disabled){ cb.checked = !cb.checked; cb.dispatchEvent(new Event('change', {bubbles:true})); } }
+  });
+
+  var toolbar = document.getElementById('toolbar');
+  var sentinel = document.querySelector('.hero');
+  if ('IntersectionObserver' in window){
+    new IntersectionObserver(function(en){ toolbar.classList.toggle('stuck', !en[0].isIntersecting); }).observe(sentinel);
+  }
+
+  fetch('tasks.json', { cache: 'no-store' })
+    .then(function(r){ if (!r.ok) throw new Error(r.status); return r.json(); })
+    .then(function(d){
+      data = d; render(); applyFilter();
+      var h = location.hash.slice(1), li = h && document.getElementById('t-' + h);
+      if (li){ setOpen(li, true); li.scrollIntoView({ block:'start' }); }
+    })
+    .catch(function(){ main.innerHTML = '<p class="err">Couldn’t load the list. Refresh to try again.</p>'; });
+})();
+</script>
+</body>
+</html>

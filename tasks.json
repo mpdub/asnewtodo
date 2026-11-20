@@ -1,0 +1,343 @@
+{
+  "updated": "21 Nov 2026",
+  "groups": [
+    { "id": "mon", "label": "Monday 23 Nov", "short": "Monday", "hint": "Online. Bank and RAM first." },
+    { "id": "tue", "label": "Tuesday 24 Nov", "short": "Tuesday", "hint": "Agreements and quotes." },
+    { "id": "later", "label": "After that", "short": "Later", "hint": "Each waits on something else." },
+    { "id": "diary", "label": "In the diary", "short": "Diary", "hint": "Dates to keep." },
+    { "id": "done", "label": "Done", "short": "Done", "hint": "Registered on 8 Nov 2026." }
+  ],
+  "tasks": [
+    {
+      "id": "ram",
+      "group": "mon",
+      "title": "Link the business in RAM",
+      "summary": "So either of you can lodge the BAS online. A Standard myID works if you link by phone.",
+      "badge": "From Dan",
+      "owner": "Martin",
+      "where": "RAM · phone",
+      "cost": "Free",
+      "body": [
+        "Linking online needs a Strong myID, which needs an Australian passport. If you can't get Strong, RAM links you by phone with a Standard myID instead.",
+        "Alternative: if Dan has an Australian passport, he gets a Strong myID, links the business online himself, then authorises you."
+      ],
+      "steps": [
+        "Check the name on your myID matches your name on the ABN record exactly. If not, raise it on the call.",
+        "Call 1300 287 539, option 3 then option 1, for a proof of identity check. Have the ABN and the myID app ready.",
+        "Once linked, log in to RAM and authorise Dan. He accepts with his own myID within 7 days.",
+        "Log in to Online services for business and check you can see the activity statement."
+      ],
+      "links": [
+        { "label": "RAM: other ways to link your business", "url": "https://info.authorisationmanager.gov.au/link-to-a-business-in-ram/set-up-a-business-in-ram/other-ways-to-link-your-business" },
+        { "label": "ATO: online services with myID and RAM", "url": "https://www.ato.gov.au/online-services/accessing-online-services-with-myid-and-ram" }
+      ]
+    },
+    {
+      "id": "bank",
+      "group": "mon",
+      "title": "Open the bank account",
+      "summary": "NAB Business Everyday, the $0 option. Payments and paying for tools wait on this.",
+      "owner": "Both",
+      "where": "NAB",
+      "cost": "$0 / month",
+      "body": [
+        "It opens online for partnerships. Clients paying “asnew” into an account in a personal name get a name-mismatch warning from their bank, so this matters before the first invoice."
+      ],
+      "steps": [
+        "Apply online with the ABN and the business name.",
+        "Both of you verify your ID.",
+        "Give both of you full access.",
+        "Add the BSB and account number to the invoice template."
+      ],
+      "links": [
+        { "label": "NAB Business Everyday ($0)", "url": "https://www.nab.com.au/business/accounts/transaction-accounts/nab-business-cheque-account" }
+      ]
+    },
+    {
+      "id": "books",
+      "group": "mon",
+      "title": "Set up the books: a spreadsheet",
+      "summary": "No Xero for now. A ledger sheet and a receipts folder meet the ATO's rules.",
+      "badge": "From Dan",
+      "where": "Sheet · Claude",
+      "cost": "Free",
+      "body": [
+        "The ATO doesn't require accounting software. Records must be kept for five years, in English, and explain every transaction.",
+        "Keep a tax invoice for any purchase over $82.50 including GST, or you can't claim that GST back.",
+        "Look at Xero again after five jobs, when you review prices. Its bank feed is the main thing it would save you."
+      ],
+      "steps": [
+        "Make the ledger: date, who, what, category, ex GST, GST, total, money in or out, receipt link. Claude can set it up.",
+        "Make a shared receipts folder. One file per receipt, named date-supplier-amount.",
+        "Log everything at least monthly, from the business account."
+      ],
+      "links": [
+        { "label": "ATO: record keeping for business", "url": "https://www.ato.gov.au/businesses-and-organisations/preparing-lodging-and-paying/record-keeping-for-business/index-record-keeping-for-business" },
+        { "label": "ATO: when you can claim a GST credit", "url": "https://www.ato.gov.au/businesses-and-organisations/gst-excise-and-indirect-taxes/gst/claiming-gst-credits/when-you-can-claim-a-gst-credit" }
+      ]
+    },
+    {
+      "id": "search",
+      "group": "mon",
+      "title": "Clear the name and the new mark",
+      "summary": "Trade mark search for asnew and the new block mark. Before the mailers go to print.",
+      "where": "IP Australia",
+      "cost": "Free",
+      "steps": [
+        "Search “asnew”, “as new” and “anew” in classes 35 and 42.",
+        "Run the new block mark (filleted A and N) through the image search.",
+        "Note anything close and send it to Claude for a read."
+      ],
+      "links": [
+        { "label": "IP Australia: search existing trade marks", "url": "https://ipaustralia.gov.au/trade-marks/search-existing-trade-marks" }
+      ]
+    },
+    {
+      "id": "domains",
+      "group": "mon",
+      "title": "Domains and handles",
+      "summary": "asnew.studio, asnew.com.au and asnew.au. Claim the social handles.",
+      "where": "Registrar",
+      "cost": "~$20–80 / yr each",
+      "body": [
+        "asnew.com.au is open to you now it matches the registered business name."
+      ],
+      "steps": [
+        "Buy asnew.studio, asnew.com.au and asnew.au.",
+        "Claim the matching Instagram and LinkedIn handles."
+      ]
+    },
+    {
+      "id": "site",
+      "group": "mon",
+      "title": "Website and pitch pages",
+      "summary": "One GitHub repo, served by Cloudflare Pages. Start step 4 early: DNS takes hours.",
+      "where": "GitHub · Cloudflare",
+      "cost": "Free",
+      "body": [
+        "Not GitHub Pages: its terms ban sites that take payments, and the pitch pages take concept fees."
+      ],
+      "steps": [
+        "Make a private repo, asnew-site, under a business account or organisation. Add Dan.",
+        "Starter files: a holding homepage, a /p/ folder for pitch pages, and a _headers file that hides /p/ from search. Claude writes these.",
+        "Make a Cloudflare account with a business email. Turn on two-factor sign-in.",
+        "Add asnew.studio to Cloudflare on the free plan, then swap the nameservers at your registrar for Cloudflare's.",
+        "Workers & Pages → Create → Pages → Connect to Git → asnew-site. No framework, no build command. Check the pages.dev link loads.",
+        "Once DNS has switched: Custom domains → add asnew.studio and www.asnew.studio. Redirect www.",
+        "Set up a real mailbox for hello@asnew.studio (Google Workspace or Fastmail) and add its records in Cloudflare.",
+        "Add asnew.com.au and asnew.au to Cloudflare and redirect both to asnew.studio.",
+        "Push a test page to /p/test- plus a random ending. Check it loads, isn't linked anywhere and has the noindex header. Delete it."
+      ],
+      "links": [
+        { "label": "Cloudflare Pages: Git integration", "url": "https://developers.cloudflare.com/pages/get-started/git-integration/" }
+      ]
+    },
+    {
+      "id": "invoice",
+      "group": "mon",
+      "title": "Tax invoice template",
+      "summary": "In the asnew brand. Claude can make it.",
+      "where": "Claude",
+      "cost": "—",
+      "steps": [
+        "Say “Tax invoice”, and show the ABN, date, what was sold and the GST.",
+        "From $1,000, add the client's name or ABN.",
+        "Add the bank details once the account is open."
+      ]
+    },
+    {
+      "id": "agreement",
+      "group": "tue",
+      "title": "Partnership agreement",
+      "summary": "Write down what you've already agreed.",
+      "owner": "Both",
+      "where": "You two",
+      "cost": "—",
+      "steps": [
+        "50/50 profit, paid quarterly.",
+        "$1,000 limit on spending alone.",
+        "Either of you can sign client agreements.",
+        "The name, the mark and the work belong to the business.",
+        "The rule that keeps Dan's day job clear.",
+        "What happens if one of you leaves. A change of partners can mean a new ABN and TFN."
+      ]
+    },
+    {
+      "id": "lawyer",
+      "group": "tue",
+      "title": "One lawyer quote",
+      "summary": "One fixed fee to review the partnership agreement and the client order agreement.",
+      "where": "Lawyer",
+      "cost": "Quote",
+      "body": [
+        "Cheaper than two separate jobs. Or start from Arts Law templates."
+      ]
+    },
+    {
+      "id": "accountant",
+      "group": "tue",
+      "title": "One accountant call (optional)",
+      "summary": "How much to set aside for tax, and a check of the spreadsheet set-up.",
+      "where": "Accountant",
+      "cost": "Quote",
+      "body": [
+        "The partnership pays no income tax itself. Each of you pays tax on your half, so set part of each payout aside. The ATO may put you on PAYG instalments after the first return."
+      ]
+    },
+    {
+      "id": "insurance",
+      "group": "tue",
+      "title": "Insurance quote",
+      "summary": "Professional indemnity. Public liability can wait.",
+      "where": "Broker",
+      "cost": "Quote",
+      "body": [
+        "No site visits, so public liability is less urgent, but some clients will ask for it."
+      ]
+    },
+    {
+      "id": "tools",
+      "group": "tue",
+      "title": "Put tools on the business",
+      "summary": "Pay subscriptions and the mailer kit from the business account.",
+      "where": "Bank",
+      "cost": "—",
+      "steps": [
+        "Move Claude, Framer (for client sites), domains and any paid fonts to the business card.",
+        "Buy the mailer kit (printer, cutting machine) on the business account.",
+        "Save every tax invoice to the receipts folder to claim the GST back."
+      ]
+    },
+    {
+      "id": "basics",
+      "group": "tue",
+      "title": "Website basics",
+      "summary": "Privacy policy, terms and the ABN in the footer.",
+      "where": "Site",
+      "cost": "—"
+    },
+    {
+      "id": "payments",
+      "group": "later",
+      "title": "Card payments",
+      "summary": "A Stripe payment link per order for the concept fee.",
+      "when": "After the bank",
+      "where": "Stripe",
+      "cost": "% per payment"
+    },
+    {
+      "id": "trademark",
+      "group": "later",
+      "title": "File the trade mark",
+      "summary": "“asnew” and the new mark together, classes 35 and 42, in both your names.",
+      "when": "After the search",
+      "where": "IP Australia",
+      "cost": "$250 / class",
+      "body": [
+        "A partnership isn't a legal person, so the mark is filed in both your names. TM Headstart gives an early read on the risk that “asnew” is seen as descriptive."
+      ]
+    },
+    {
+      "id": "terms",
+      "group": "later",
+      "title": "Client terms",
+      "summary": "Settle the open decisions, then the lawyer's review.",
+      "when": "After the quote",
+      "where": "Lawyer",
+      "cost": "—",
+      "steps": [
+        "Concept fee.",
+        "Invoice terms.",
+        "Rounds of tweaks.",
+        "Lawyer's review."
+      ]
+    },
+    {
+      "id": "bas",
+      "group": "diary",
+      "title": "First BAS",
+      "summary": "October to December 2026. Lodge it even if you made nothing.",
+      "when": "28 Feb 2027",
+      "where": "ATO",
+      "cost": "Free",
+      "body": [
+        "Registered for GST means a BAS every quarter, nil or not."
+      ],
+      "steps": [
+        "Online services for business, once RAM is linked.",
+        "Nil BAS only: phone 13 72 26, any time.",
+        "Or a BAS agent, which also pushes the due date later."
+      ],
+      "links": [
+        { "label": "ATO: lodging in Online services for business", "url": "https://www.ato.gov.au/General/Online-services/Businesses/Lodgments-in-Online-services-for-business/" }
+      ]
+    },
+    {
+      "id": "prices",
+      "group": "diary",
+      "title": "Review prices",
+      "summary": "Leave them for now. Look again once five jobs are done. Same time as Xero.",
+      "when": "After 5 jobs",
+      "where": "You two",
+      "cost": "—"
+    },
+    {
+      "id": "returns",
+      "group": "diary",
+      "title": "First tax returns",
+      "summary": "The partnership's return for the year to 30 June 2027, then your own.",
+      "when": "31 Oct 2027",
+      "where": "ATO",
+      "cost": "Free"
+    },
+    {
+      "id": "renew",
+      "group": "diary",
+      "title": "Renew the business name",
+      "summary": "ASIC emails a reminder. Renew before it lapses.",
+      "when": "Nov 2029",
+      "where": "ASIC",
+      "cost": "$108 / 3 yrs"
+    },
+    {
+      "id": "structure",
+      "group": "done",
+      "done": true,
+      "title": "Partnership",
+      "summary": "Both personally liable. Look at a Pty Ltd once the work grows.",
+      "where": "Decided"
+    },
+    {
+      "id": "abn",
+      "group": "done",
+      "done": true,
+      "title": "ABN",
+      "summary": "Registered 8 Nov 2026.",
+      "where": "ABR"
+    },
+    {
+      "id": "name",
+      "group": "done",
+      "done": true,
+      "title": "Business name ASNEW",
+      "summary": "Registered for three years.",
+      "where": "ASIC"
+    },
+    {
+      "id": "gst",
+      "group": "done",
+      "done": true,
+      "title": "GST",
+      "summary": "From 8 Nov 2026. Quarterly BAS, cash basis. It sits on the ABN: there's no separate number.",
+      "where": "ATO"
+    },
+    {
+      "id": "tfn",
+      "group": "done",
+      "done": true,
+      "title": "Partnership TFN",
+      "summary": "Received. Keep it private: never on invoices or the site.",
+      "where": "ATO"
+    }
+  ]
+}
