@@ -1,5 +1,5 @@
 {
-  "updated": "21 Nov 2026",
+  "updated": "21 Nov 2026, 11:30",
   "groups": [
     { "id": "mon", "label": "Monday 23 Nov", "short": "Monday", "hint": "Online. Bank and RAM first." },
     { "id": "tue", "label": "Tuesday 24 Nov", "short": "Tuesday", "hint": "Agreements and quotes." },
@@ -226,6 +226,29 @@
       "cost": "% per payment"
     },
     {
+      "id": "contact",
+      "group": "later",
+      "title": "Switch the contact email to hello@",
+      "summary": "The registrations list Dan's personal Outlook. Change it to hello@asnew.studio.",
+      "badge": "New",
+      "when": "After the mailbox",
+      "where": "ABR · ASIC",
+      "cost": "Free",
+      "body": [
+        "Once hello@asnew.studio is working (website step 7), put it on every registration so ATO and ASIC mail comes to the business, not one person.",
+        "From then on, if a contact detail you've given stops being right, update it within 28 days."
+      ],
+      "steps": [
+        "ABN, GST and TFN: update the email in Online services for business once RAM is linked, or on the ABR site.",
+        "Business name: update the holder's contact details in ASIC's online services.",
+        "Check both registers show the new email."
+      ],
+      "links": [
+        { "label": "ABR: update your ABN details", "url": "https://www.abr.gov.au/business-super-funds-charities/updating-or-cancelling-your-abn/update-your-abn-details" },
+        { "label": "ASIC: change business name holder details", "url": "https://www.asic.gov.au/for-business-and-companies/business-names/change-business-name-details/change-business-name-holder-details/" }
+      ]
+    },
+    {
       "id": "trademark",
       "group": "later",
       "title": "File the trade mark",
@@ -234,6 +257,7 @@
       "where": "IP Australia",
       "cost": "$250 / class",
       "body": [
+        "Registering the business name doesn't mean you own it. Only a trade mark does that, and it matters if asnew carries the brand for years.",
         "A partnership isn't a legal person, so the mark is filed in both your names. TM Headstart gives an early read on the risk that “asnew” is seen as descriptive."
       ]
     },
