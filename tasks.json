@@ -287,6 +287,31 @@
       ]
     },
     {
+      "id": "order-email",
+      "group": "later",
+      "title": "Email us when someone sends an order",
+      "summary": "SEND IT on the Start page emails their order and answers to hello@. Uses the same Resend set-up as the pitch alerts.",
+      "badge": "New",
+      "when": "With the pitch alerts",
+      "where": "Cloudflare · Resend",
+      "cost": "Free",
+      "body": [
+        "A small function in asnew-site takes what they picked on the Menu (prices +GST) and their four answers, then emails them to hello@. Reply-to is their address, so you just hit Reply.",
+        "An invisible Cloudflare Turnstile check keeps bots out. Nothing is stored: the email is the record, and the job still goes in the Jobs tracker by hand."
+      ],
+      "steps": [
+        "Do the Resend set-up from the pitch alerts task first.",
+        "Add a free Turnstile widget for the site in Cloudflare and put its secret key in Cloudflare Pages.",
+        "Decide whether they also get a copy: \"Thanks, here's what you picked. We'll have a look and email you.\"",
+        "Claude adds the function and connects SEND IT to it.",
+        "Send a test order from your phone and check the email, the Reply-to and the confirmation screen."
+      ],
+      "links": [
+        { "label": "Cloudflare Turnstile", "url": "https://developers.cloudflare.com/turnstile/" },
+        { "label": "Cloudflare Pages Functions", "url": "https://developers.cloudflare.com/pages/functions/" }
+      ]
+    },
+    {
       "id": "trademark",
       "group": "later",
       "title": "File the trade mark",
