@@ -1,5 +1,5 @@
 {
-  "updated": "21 Nov 2026, 11:30",
+  "updated": "21 Nov 2026, 12:40",
   "groups": [
     { "id": "mon", "label": "Monday 23 Nov", "short": "Monday", "hint": "Online. Bank and RAM first." },
     { "id": "tue", "label": "Tuesday 24 Nov", "short": "Tuesday", "hint": "Agreements and quotes." },
@@ -246,6 +246,32 @@
       "links": [
         { "label": "ABR: update your ABN details", "url": "https://www.abr.gov.au/business-super-funds-charities/updating-or-cancelling-your-abn/update-your-abn-details" },
         { "label": "ASIC: change business name holder details", "url": "https://www.asic.gov.au/for-business-and-companies/business-names/change-business-name-details/change-business-name-holder-details/" }
+      ]
+    },
+    {
+      "id": "pitch-alerts",
+      "group": "later",
+      "title": "Email when a prospect opens their pitch",
+      "summary": "An email to Martin and Dan each time a pitch page under /p/ is opened. No other analytics.",
+      "badge": "New",
+      "when": "After the website",
+      "where": "Cloudflare · Resend",
+      "cost": "Free",
+      "body": [
+        "A small function in asnew-site sends the email after someone has been on the page for about 5 seconds, which filters out bots and link previews. The email says which business, where they are, the device and whether they came from the mailer or an email.",
+        "Your own visits are skipped once you've opened /me on each of your devices."
+      ],
+      "steps": [
+        "Make a free Resend account and add its DNS records for asnew.studio in Cloudflare.",
+        "Put the Resend key in Cloudflare Pages as a secret, not in the repo.",
+        "Claude adds the function and the 5-second signal to the pitch pages.",
+        "Point mailer QR codes at ?src=mailer and email links at ?src=email.",
+        "Open /me on each of your phones and laptops.",
+        "Open a test pitch page from another phone and check the email arrives."
+      ],
+      "links": [
+        { "label": "Cloudflare Pages Functions", "url": "https://developers.cloudflare.com/pages/functions/" },
+        { "label": "Resend: send with Cloudflare Workers", "url": "https://resend.com/docs/send-with-cloudflare-workers" }
       ]
     },
     {
