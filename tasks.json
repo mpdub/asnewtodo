@@ -290,7 +290,7 @@
       "id": "order-email",
       "group": "later",
       "title": "Email us when someone sends an order",
-      "summary": "SEND IT on the Start page emails their order and answers to hello@. Uses the same Resend set-up as the pitch alerts.",
+      "summary": "SEND IT on the Start page emails their order and answers to hello@, and sends them a copy. Uses the same Resend set-up as the pitch alerts.",
       "badge": "New",
       "when": "With the pitch alerts",
       "where": "Cloudflare · Resend",
@@ -302,9 +302,9 @@
       "steps": [
         "Do the Resend set-up from the pitch alerts task first.",
         "Add a free Turnstile widget for the site in Cloudflare and put its secret key in Cloudflare Pages.",
-        "Decide whether they also get a copy: \"Thanks, here's what you picked. We'll have a look and email you.\"",
-        "Claude adds the function and connects SEND IT to it.",
-        "Send a test order from your phone and check the email, the Reply-to and the confirmation screen."
+        "Claude designs their copy of the order in the asnew brand: what they picked, prices +GST, their answers, and \"We'll have a look and email you.\"",
+        "Claude adds the function and connects SEND IT to it. One send emails hello@ and their copy at the same time.",
+        "Send a test order from your phone and check both emails, the Reply-to on each and the confirmation screen. Check their copy doesn't land in spam in Gmail and Outlook."
       ],
       "links": [
         { "label": "Cloudflare Turnstile", "url": "https://developers.cloudflare.com/turnstile/" },
