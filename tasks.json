@@ -1,5 +1,5 @@
 {
-  "updated": "21 Nov 2026, 12:40",
+  "updated": "21 Nov 2026, 13:20",
   "groups": [
     { "id": "mon", "label": "Monday 23 Nov", "short": "Monday", "hint": "Online. Bank and RAM first." },
     { "id": "tue", "label": "Tuesday 24 Nov", "short": "Tuesday", "hint": "Agreements and quotes." },
@@ -212,9 +212,21 @@
       "id": "basics",
       "group": "tue",
       "title": "Website basics",
-      "summary": "Privacy policy, terms and the ABN in the footer.",
+      "summary": "Privacy policy, terms and the ABN in the footer. No cookie banner needed.",
       "where": "Site",
-      "cost": "—"
+      "cost": "—",
+      "body": [
+        "Under $3m turnover, asnew is exempt from the Privacy Act, and Australia has no cookie law. A short, plain privacy policy is still worth having, so nobody feels caught out.",
+        "Revisit the banner question if you add Google Analytics, an ad pixel or anything aimed at EU or UK visitors."
+      ],
+      "steps": [
+        "Privacy policy: what you collect (enquiry emails, order details), why, and that you don't sell it.",
+        "Pitch pages: say you're notified when one is opened, with the rough location and device.",
+        "Cookies: none for visitors. One on your own devices, to skip your own visits.",
+        "Payments: handled by Stripe on its own pages; you never see card details.",
+        "Terms page, and the ABN in the footer.",
+        "Add the policy to the lawyer's review."
+      ]
     },
     {
       "id": "payments",
