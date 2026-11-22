@@ -133,6 +133,24 @@
       ]
     },
     {
+      "id": "phone",
+      "group": "mon",
+      "title": "Get a business phone number",
+      "summary": "For the bank, the ATO, suppliers and clients once they've signed. Not on the website.",
+      "badge": "New",
+      "where": "Telco",
+      "cost": "~$10–20 / month",
+      "body": [
+        "Prospects still come in by website and email. The number is for accounts, verification codes and client calls once a job has started."
+      ],
+      "steps": [
+        "Pick one: a prepaid eSIM on one of your phones, or a cheap prepaid SIM in a spare phone.",
+        "Decide who carries it, or forward it to both of you.",
+        "Use it for the bank account, the ABR and ASIC records, and the business accounts.",
+        "Add it to the email signature and the order email, not the website."
+      ]
+    },
+    {
       "id": "invoice",
       "group": "mon",
       "title": "Tax invoice template",
