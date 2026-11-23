@@ -287,7 +287,7 @@
         "Your own visits are skipped once you've opened /me on each of your devices."
       ],
       "steps": [
-        "Make a free Resend account and add its DNS records for asnew.au in Cloudflare. Keep the SPF to one record: add Resend to the existing Google one.",
+        "Make a free Resend account and add its DNS records for asnew.au in Cloudflare. They sit on a send. subdomain, so the Google email records stay as they are.",
         "Put the Resend key in Cloudflare Pages as a secret, not in the repo.",
         "Claude adds the function and the 5-second signal to the pitch pages.",
         "Point mailer QR codes at ?src=mailer and email links at ?src=email.",
