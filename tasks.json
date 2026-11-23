@@ -124,7 +124,8 @@
         "Add asnew.studio to Cloudflare on the free plan, then swap the nameservers at your registrar for Cloudflare's.",
         "Workers & Pages → Create → Pages → Connect to Git → asnew-site. No framework, no build command. Check the pages.dev link loads.",
         "Once DNS has switched: Custom domains → add asnew.studio and www.asnew.studio. Redirect www.",
-        "Set up a real mailbox for hello@asnew.studio (Google Workspace or Fastmail) and add its records in Cloudflare.",
+        "If you move asnew.au's nameservers to Cloudflare, copy every email record from Porkbun first: MX, SPF, google._domainkey and _dmarc. Miss one and studio@ mail bounces or lands in spam.",
+        "Once the site is live, delete the wildcard *.asnew.au CNAME (Porkbun's parking page).",
         "Add asnew.com.au and asnew.au to Cloudflare and redirect both to asnew.studio.",
         "Push a test page to /p/test- plus a random ending. Check it loads, isn't linked anywhere and has the noindex header. Delete it."
       ],
@@ -257,15 +258,15 @@
     },
     {
       "id": "contact",
-      "group": "later",
-      "title": "Switch the contact email to hello@",
-      "summary": "The registrations list Dan's personal Outlook. Change it to hello@asnew.studio.",
+      "group": "mon",
+      "title": "Switch the contact email to studio@",
+      "summary": "The registrations list Dan's personal Outlook. Change it to studio@asnew.au.",
       "badge": "New",
-      "when": "After the mailbox",
+      "when": "Now",
       "where": "ABR · ASIC",
       "cost": "Free",
       "body": [
-        "Once hello@asnew.studio is working (website step 7), put it on every registration so ATO and ASIC mail comes to the business, not one person.",
+        "studio@asnew.au is working, so put it on every registration so ATO and ASIC mail comes to the business, not one person.",
         "From then on, if a contact detail you've given stops being right, update it within 28 days."
       ],
       "steps": [
@@ -387,6 +388,15 @@
       "cost": "—"
     },
     {
+      "id": "dmarc",
+      "group": "diary",
+      "title": "Tighten DMARC",
+      "summary": "Once studio@ mail keeps passing, change the _dmarc record in Porkbun from p=none to p=quarantine.",
+      "when": "Mid Dec 2026",
+      "where": "Porkbun",
+      "cost": "Free"
+    },
+    {
       "id": "returns",
       "group": "diary",
       "title": "First tax returns",
@@ -443,6 +453,14 @@
       "title": "Partnership TFN",
       "summary": "Received. Keep it private: never on invoices or the site.",
       "where": "ATO"
+    },
+    {
+      "id": "mailbox",
+      "group": "done",
+      "done": true,
+      "title": "studio@asnew.au",
+      "summary": "Google Workspace mailbox. SPF, DKIM and DMARC all pass (23 Nov). Some mail may hit spam for a few weeks while the domain is new.",
+      "where": "Google · Porkbun"
     }
   ]
 }
