@@ -95,16 +95,12 @@
     {
       "id": "domains",
       "group": "mon",
-      "title": "Domains and handles",
-      "summary": "asnew.studio, asnew.com.au and asnew.au. Claim the social handles.",
-      "where": "Registrar",
-      "cost": "~$20–80 / yr each",
-      "body": [
-        "asnew.com.au is open to you now it matches the registered business name."
-      ],
+      "title": "Social handles",
+      "summary": "asnew.au is bought. Claim the matching handles.",
+      "where": "Instagram · LinkedIn",
+      "cost": "Free",
       "steps": [
-        "Buy asnew.studio, asnew.com.au and asnew.au.",
-        "Claim the matching Instagram and LinkedIn handles."
+        "Claim the matching Instagram and LinkedIn handles, with studio@asnew.au as the login."
       ]
     },
     {
@@ -121,12 +117,10 @@
         "Make a private repo, asnew-site, under a business account or organisation. Add Dan.",
         "Starter files: a holding homepage, a /p/ folder for pitch pages, and a _headers file that hides /p/ from search. Claude writes these.",
         "Make a Cloudflare account with a business email. Turn on two-factor sign-in.",
-        "Add asnew.studio to Cloudflare on the free plan, then swap the nameservers at your registrar for Cloudflare's.",
+        "Add asnew.au to Cloudflare on the free plan. Before you swap the nameservers at Porkbun for Cloudflare's, check every email record came across: MX, SPF, google._domainkey and _dmarc. Miss one and studio@ mail bounces or lands in spam.",
         "Workers & Pages → Create → Pages → Connect to Git → asnew-site. No framework, no build command. Check the pages.dev link loads.",
-        "Once DNS has switched: Custom domains → add asnew.studio and www.asnew.studio. Redirect www.",
-        "If you move asnew.au's nameservers to Cloudflare, copy every email record from Porkbun first: MX, SPF, google._domainkey and _dmarc. Miss one and studio@ mail bounces or lands in spam.",
-        "Once the site is live, delete the wildcard *.asnew.au CNAME (Porkbun's parking page).",
-        "Add asnew.com.au and asnew.au to Cloudflare and redirect both to asnew.studio.",
+        "Once DNS has switched: Custom domains → add asnew.au and www.asnew.au. Redirect www.",
+        "Once the site is live, delete the wildcard *.asnew.au CNAME (Porkbun's parking page) if it came across.",
         "Push a test page to /p/test- plus a random ending. Check it loads, isn't linked anywhere and has the noindex header. Delete it."
       ],
       "links": [
@@ -283,7 +277,7 @@
       "id": "pitch-alerts",
       "group": "later",
       "title": "Email when a prospect opens their pitch",
-      "summary": "An email to Martin and Dan each time a pitch page under /p/ is opened. No other analytics.",
+      "summary": "An email to studio@ each time a pitch page under /p/ is opened. No other analytics.",
       "badge": "New",
       "when": "After the website",
       "where": "Cloudflare · Resend",
@@ -293,7 +287,7 @@
         "Your own visits are skipped once you've opened /me on each of your devices."
       ],
       "steps": [
-        "Make a free Resend account and add its DNS records for asnew.studio in Cloudflare.",
+        "Make a free Resend account and add its DNS records for asnew.au in Cloudflare. Keep the SPF to one record: add Resend to the existing Google one.",
         "Put the Resend key in Cloudflare Pages as a secret, not in the repo.",
         "Claude adds the function and the 5-second signal to the pitch pages.",
         "Point mailer QR codes at ?src=mailer and email links at ?src=email.",
@@ -309,20 +303,20 @@
       "id": "order-email",
       "group": "later",
       "title": "Email us when someone sends an order",
-      "summary": "SEND IT on the Start page emails their order and answers to hello@, and sends them a copy. Uses the same Resend set-up as the pitch alerts.",
+      "summary": "SEND IT on the Start page emails their order and answers to studio@, and sends them a copy. Uses the same Resend set-up as the pitch alerts.",
       "badge": "New",
       "when": "With the pitch alerts",
       "where": "Cloudflare · Resend",
       "cost": "Free",
       "body": [
-        "A small function in asnew-site takes what they picked on the Menu (prices +GST) and their four answers, then emails them to hello@. Reply-to is their address, so you just hit Reply.",
+        "A small function in asnew-site takes what they picked on the Menu (prices +GST) and their four answers, then emails them to studio@. Reply-to is their address, so you just hit Reply.",
         "An invisible Cloudflare Turnstile check keeps bots out. Nothing is stored: the email is the record, and the job still goes in the Jobs tracker by hand."
       ],
       "steps": [
         "Do the Resend set-up from the pitch alerts task first.",
         "Add a free Turnstile widget for the site in Cloudflare and put its secret key in Cloudflare Pages.",
         "Claude designs their copy of the order in the asnew brand: what they picked, prices +GST, their answers, and \"We'll have a look and email you.\"",
-        "Claude adds the function and connects SEND IT to it. One send emails hello@ and their copy at the same time.",
+        "Claude adds the function and connects SEND IT to it. One send emails studio@ and their copy at the same time.",
         "Send a test order from your phone and check both emails, the Reply-to on each and the confirmation screen. Check their copy doesn't land in spam in Gmail and Outlook."
       ],
       "links": [
@@ -458,8 +452,8 @@
       "id": "mailbox",
       "group": "done",
       "done": true,
-      "title": "studio@asnew.au",
-      "summary": "Google Workspace mailbox. SPF, DKIM and DMARC all pass (23 Nov). Some mail may hit spam for a few weeks while the domain is new.",
+      "title": "asnew.au and studio@asnew.au",
+      "summary": "Domain at Porkbun, one Google Workspace mailbox. SPF, DKIM and DMARC all pass (23 Nov). Some mail may hit spam for a few weeks while the domain is new.",
       "where": "Google · Porkbun"
     }
   ]
