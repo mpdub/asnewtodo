@@ -1,11 +1,36 @@
 {
-  "updated": "21 Nov 2026, 13:20",
+  "updated": "24 Nov 2026, 13:00",
   "groups": [
-    { "id": "mon", "label": "Monday 23 Nov", "short": "Monday", "hint": "Online. Bank and RAM first." },
-    { "id": "tue", "label": "Tuesday 24 Nov", "short": "Tuesday", "hint": "Agreements and quotes." },
-    { "id": "later", "label": "After that", "short": "Later", "hint": "Each waits on something else." },
-    { "id": "diary", "label": "In the diary", "short": "Diary", "hint": "Dates to keep." },
-    { "id": "done", "label": "Done", "short": "Done", "hint": "Registered on 8 Nov 2026." }
+    {
+      "id": "mon",
+      "label": "Monday 23 Nov",
+      "short": "Monday",
+      "hint": "Online. Bank and RAM first."
+    },
+    {
+      "id": "tue",
+      "label": "Tuesday 24 Nov",
+      "short": "Tuesday",
+      "hint": "Agreements and quotes."
+    },
+    {
+      "id": "later",
+      "label": "After that",
+      "short": "Later",
+      "hint": "Each waits on something else."
+    },
+    {
+      "id": "diary",
+      "label": "In the diary",
+      "short": "Diary",
+      "hint": "Dates to keep."
+    },
+    {
+      "id": "done",
+      "label": "Done",
+      "short": "Done",
+      "hint": "Registered on 8 Nov 2026."
+    }
   ],
   "tasks": [
     {
@@ -28,8 +53,14 @@
         "Log in to Online services for business and check you can see the activity statement."
       ],
       "links": [
-        { "label": "RAM: other ways to link your business", "url": "https://info.authorisationmanager.gov.au/link-to-a-business-in-ram/set-up-a-business-in-ram/other-ways-to-link-your-business" },
-        { "label": "ATO: online services with myID and RAM", "url": "https://www.ato.gov.au/online-services/accessing-online-services-with-myid-and-ram" }
+        {
+          "label": "RAM: other ways to link your business",
+          "url": "https://info.authorisationmanager.gov.au/link-to-a-business-in-ram/set-up-a-business-in-ram/other-ways-to-link-your-business"
+        },
+        {
+          "label": "ATO: online services with myID and RAM",
+          "url": "https://www.ato.gov.au/online-services/accessing-online-services-with-myid-and-ram"
+        }
       ]
     },
     {
@@ -50,7 +81,10 @@
         "Add the BSB and account number to the invoice template."
       ],
       "links": [
-        { "label": "NAB Business Everyday ($0)", "url": "https://www.nab.com.au/business/accounts/transaction-accounts/nab-business-cheque-account" }
+        {
+          "label": "NAB Business Everyday ($0)",
+          "url": "https://www.nab.com.au/business/accounts/transaction-accounts/nab-business-cheque-account"
+        }
       ]
     },
     {
@@ -72,8 +106,14 @@
         "Log everything at least monthly, from the business account."
       ],
       "links": [
-        { "label": "ATO: record keeping for business", "url": "https://www.ato.gov.au/businesses-and-organisations/preparing-lodging-and-paying/record-keeping-for-business/index-record-keeping-for-business" },
-        { "label": "ATO: when you can claim a GST credit", "url": "https://www.ato.gov.au/businesses-and-organisations/gst-excise-and-indirect-taxes/gst/claiming-gst-credits/when-you-can-claim-a-gst-credit" }
+        {
+          "label": "ATO: record keeping for business",
+          "url": "https://www.ato.gov.au/businesses-and-organisations/preparing-lodging-and-paying/record-keeping-for-business/index-record-keeping-for-business"
+        },
+        {
+          "label": "ATO: when you can claim a GST credit",
+          "url": "https://www.ato.gov.au/businesses-and-organisations/gst-excise-and-indirect-taxes/gst/claiming-gst-credits/when-you-can-claim-a-gst-credit"
+        }
       ]
     },
     {
@@ -89,7 +129,10 @@
         "Note anything close and send it to Claude for a read."
       ],
       "links": [
-        { "label": "IP Australia: search existing trade marks", "url": "https://ipaustralia.gov.au/trade-marks/search-existing-trade-marks" }
+        {
+          "label": "IP Australia: search existing trade marks",
+          "url": "https://ipaustralia.gov.au/trade-marks/search-existing-trade-marks"
+        }
       ]
     },
     {
@@ -124,7 +167,10 @@
         "Push a test page to /p/test- plus a random ending. Check it loads, isn't linked anywhere and has the noindex header. Delete it."
       ],
       "links": [
-        { "label": "Cloudflare Pages: Git integration", "url": "https://developers.cloudflare.com/pages/get-started/git-integration/" }
+        {
+          "label": "Cloudflare Pages: Git integration",
+          "url": "https://developers.cloudflare.com/pages/get-started/git-integration/"
+        }
       ]
     },
     {
@@ -269,8 +315,14 @@
         "Check both registers show the new email."
       ],
       "links": [
-        { "label": "ABR: update your ABN details", "url": "https://www.abr.gov.au/business-super-funds-charities/updating-or-cancelling-your-abn/update-your-abn-details" },
-        { "label": "ASIC: change business name holder details", "url": "https://www.asic.gov.au/for-business-and-companies/business-names/change-business-name-details/change-business-name-holder-details/" }
+        {
+          "label": "ABR: update your ABN details",
+          "url": "https://www.abr.gov.au/business-super-funds-charities/updating-or-cancelling-your-abn/update-your-abn-details"
+        },
+        {
+          "label": "ASIC: change business name holder details",
+          "url": "https://www.asic.gov.au/for-business-and-companies/business-names/change-business-name-details/change-business-name-holder-details/"
+        }
       ]
     },
     {
@@ -295,8 +347,14 @@
         "Open a test pitch page from another phone and check the email arrives."
       ],
       "links": [
-        { "label": "Cloudflare Pages Functions", "url": "https://developers.cloudflare.com/pages/functions/" },
-        { "label": "Resend: send with Cloudflare Workers", "url": "https://resend.com/docs/send-with-cloudflare-workers" }
+        {
+          "label": "Cloudflare Pages Functions",
+          "url": "https://developers.cloudflare.com/pages/functions/"
+        },
+        {
+          "label": "Resend: send with Cloudflare Workers",
+          "url": "https://resend.com/docs/send-with-cloudflare-workers"
+        }
       ]
     },
     {
@@ -320,8 +378,14 @@
         "Send a test order from your phone and check both emails, the Reply-to on each and the confirmation screen. Check their copy doesn't land in spam in Gmail and Outlook."
       ],
       "links": [
-        { "label": "Cloudflare Turnstile", "url": "https://developers.cloudflare.com/turnstile/" },
-        { "label": "Cloudflare Pages Functions", "url": "https://developers.cloudflare.com/pages/functions/" }
+        {
+          "label": "Cloudflare Turnstile",
+          "url": "https://developers.cloudflare.com/turnstile/"
+        },
+        {
+          "label": "Cloudflare Pages Functions",
+          "url": "https://developers.cloudflare.com/pages/functions/"
+        }
       ]
     },
     {
@@ -369,7 +433,27 @@
         "Or a BAS agent, which also pushes the due date later."
       ],
       "links": [
-        { "label": "ATO: lodging in Online services for business", "url": "https://www.ato.gov.au/General/Online-services/Businesses/Lodgments-in-Online-services-for-business/" }
+        {
+          "label": "ATO: lodging in Online services for business",
+          "url": "https://www.ato.gov.au/General/Online-services/Businesses/Lodgments-in-Online-services-for-business/"
+        }
+      ]
+    },
+    {
+      "id": "parked-mailer",
+      "group": "diary",
+      "title": "Mailer to the parked prospects",
+      "summary": "Once there are 2–3 case studies, a cheap mailer to the C-tier and parked prospects. No spec work: just a link to the website and its cases.",
+      "badge": "New",
+      "when": "Mar–Apr 2027",
+      "where": "You two",
+      "cost": "Print + postage",
+      "steps": [
+        "Wait for 2–3 live case studies (VCO launches Jan or Feb).",
+        "Clean the list: drop anyone now using AI imagery or who has rebranded.",
+        "One template, with a case from their own sector on the front (accountants see an accountant).",
+        "A plain postcard, no press-out card.",
+        "Follow-up email two weeks later if they haven't replied."
       ]
     },
     {
