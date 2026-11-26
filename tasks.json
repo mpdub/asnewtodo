@@ -1,5 +1,5 @@
 {
-  "updated": "26 Nov 2026, 11:20",
+  "updated": "26 Nov 2026, 15:40",
   "groups": [
     {
       "id": "mon",
@@ -274,6 +274,20 @@
       "when": "After the bank",
       "where": "Stripe",
       "cost": "% per payment"
+    },
+    {
+      "id": "pay-link",
+      "group": "later",
+      "title": "Short link for card payments",
+      "summary": "Make asnew.au/pay go to the Stripe concept-fee link, then show that on invoices instead of the long Stripe address. Not urgent.",
+      "where": "Cloudflare",
+      "cost": "Free",
+      "steps": [
+        "Either: in Cloudflare, add a Redirect Rule sending asnew.au/pay to https://buy.stripe.com/bJeeVd5X7ciUfjR1iNfnO00.",
+        "Or: wait for the website build in December, and Claude adds it there.",
+        "Check asnew.au/pay opens the $2,750 checkout.",
+        "Tell Claude to switch concept-fee invoices to show asnew.au/pay."
+      ]
     },
     {
       "id": "contact",
