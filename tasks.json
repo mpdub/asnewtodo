@@ -1,5 +1,5 @@
 {
-  "updated": "24 Nov 2026, 13:00",
+  "updated": "26 Nov 2026, 11:20",
   "groups": [
     {
       "id": "mon",
@@ -136,44 +136,6 @@
       ]
     },
     {
-      "id": "domains",
-      "group": "mon",
-      "title": "Social handles",
-      "summary": "asnew.au is bought. Claim the matching handles.",
-      "where": "Instagram · LinkedIn",
-      "cost": "Free",
-      "steps": [
-        "Claim the matching Instagram and LinkedIn handles, with studio@asnew.au as the login."
-      ]
-    },
-    {
-      "id": "site",
-      "group": "mon",
-      "title": "Website and pitch pages",
-      "summary": "One GitHub repo, served by Cloudflare Pages. Start step 4 early: DNS takes hours.",
-      "where": "GitHub · Cloudflare",
-      "cost": "Free",
-      "body": [
-        "Not GitHub Pages: its terms ban sites that take payments, and the pitch pages take concept fees."
-      ],
-      "steps": [
-        "Make a private repo, asnew-site, under a business account or organisation. Add Dan.",
-        "Starter files: a holding homepage, a /p/ folder for pitch pages, and a _headers file that hides /p/ from search. Claude writes these.",
-        "Make a Cloudflare account with a business email. Turn on two-factor sign-in.",
-        "Add asnew.au to Cloudflare on the free plan. Before you swap the nameservers at Porkbun for Cloudflare's, check every email record came across: MX, SPF, google._domainkey and _dmarc. Miss one and studio@ mail bounces or lands in spam.",
-        "Workers & Pages → Create → Pages → Connect to Git → asnew-site. No framework, no build command. Check the pages.dev link loads.",
-        "Once DNS has switched: Custom domains → add asnew.au and www.asnew.au. Redirect www.",
-        "Once the site is live, delete the wildcard *.asnew.au CNAME (Porkbun's parking page) if it came across.",
-        "Push a test page to /p/test- plus a random ending. Check it loads, isn't linked anywhere and has the noindex header. Delete it."
-      ],
-      "links": [
-        {
-          "label": "Cloudflare Pages: Git integration",
-          "url": "https://developers.cloudflare.com/pages/get-started/git-integration/"
-        }
-      ]
-    },
-    {
       "id": "phone",
       "group": "mon",
       "title": "Get a business phone number",
@@ -288,6 +250,23 @@
       ]
     },
     {
+      "id": "launch",
+      "group": "later",
+      "title": "Launch the website",
+      "summary": "The pages are designed and the prices are in. Build once these are settled.",
+      "badge": "New",
+      "when": "December 2026",
+      "where": "asnew-site · canvas page 2",
+      "cost": "Free",
+      "steps": [
+        "Pick the About footage frame it opens and rests on (launch homepage, About, phone About).",
+        "Email when someone sends an order (the task below), so SEND IT works.",
+        "Privacy and Terms: update after the lawyer's review, then add the date.",
+        "Trade mark search for asnew and the new mark, before launch.",
+        "Then tell Claude to build: launch homepage, How it works, FAQ, About, Menu, Start, Sent, Privacy, Terms, 404, favicon and share images."
+      ]
+    },
+    {
       "id": "payments",
       "group": "later",
       "title": "Card payments",
@@ -329,7 +308,7 @@
       "id": "pitch-alerts",
       "group": "later",
       "title": "Email when a prospect opens their pitch",
-      "summary": "An email to studio@ each time a pitch page under /p/ is opened. No other analytics.",
+      "summary": "An email to studio@ each time a pitch page (asnew.au/<name>) is opened. No other analytics.",
       "badge": "New",
       "when": "After the website",
       "where": "Cloudflare · Resend",
@@ -539,6 +518,44 @@
       "title": "asnew.au and studio@asnew.au",
       "summary": "Domain at Porkbun, one Google Workspace mailbox. SPF, DKIM and DMARC all pass (23 Nov). Some mail may hit spam for a few weeks while the domain is new.",
       "where": "Google · Porkbun"
+    },
+    {
+      "id": "site",
+      "group": "done",
+      "title": "Website and pitch pages",
+      "summary": "One GitHub repo, served by Cloudflare Pages on asnew.au.",
+      "where": "GitHub · Cloudflare",
+      "cost": "Free",
+      "body": [
+        "Not GitHub Pages: its terms ban sites that take payments, and the pitch pages take concept fees.",
+        "Pitch pages sit at asnew.au/<name>, e.g. asnew.au/wte, as printed on the mailers. Each one gets a noindex header in _headers and stays out of the sitemap, so it can't be found by search."
+      ],
+      "steps": [
+        "Make a private repo, asnew-site, under a business account or organisation. Add Dan.",
+        "Starter files: a holding homepage, pitch pages at asnew.au/<name>, and a _headers file that marks each one noindex. Claude writes these.",
+        "Make a Cloudflare account with a business email. Turn on two-factor sign-in.",
+        "Add asnew.au to Cloudflare on the free plan. Before you swap the nameservers at Porkbun for Cloudflare's, check every email record came across: MX, SPF, google._domainkey and _dmarc. Miss one and studio@ mail bounces or lands in spam.",
+        "Workers & Pages → Create → Pages → Connect to Git → asnew-site. No framework, no build command. Check the pages.dev link loads.",
+        "Once DNS has switched: Custom domains → add asnew.au and www.asnew.au. Redirect www.",
+        "Once the site is live, delete the wildcard *.asnew.au CNAME (Porkbun's parking page) if it came across.",
+        "Push a test pitch page to /test- plus a random ending. Check it loads, isn't linked anywhere and has the noindex header. Delete it."
+      ],
+      "links": [
+        {
+          "label": "Cloudflare Pages: Git integration",
+          "url": "https://developers.cloudflare.com/pages/get-started/git-integration/"
+        }
+      ],
+      "done": true
+    },
+    {
+      "id": "domains",
+      "group": "done",
+      "title": "Social handles",
+      "summary": "Instagram and LinkedIn handles claimed, with studio@asnew.au as the login.",
+      "where": "Instagram · LinkedIn",
+      "cost": "Free",
+      "done": true
     }
   ]
 }
