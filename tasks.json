@@ -1,17 +1,17 @@
 {
-  "updated": "26 Nov 2026, 15:40",
+  "updated": "27 Nov 2026, 09:05",
   "groups": [
     {
       "id": "mon",
-      "label": "Monday 23 Nov",
-      "short": "Monday",
-      "hint": "Online. Bank and RAM first."
+      "label": "Next up",
+      "short": "Next",
+      "hint": "RAM and the contact email."
     },
     {
       "id": "tue",
-      "label": "Tuesday 24 Nov",
-      "short": "Tuesday",
-      "hint": "Agreements and quotes."
+      "label": "Then",
+      "short": "Then",
+      "hint": "Quotes, tools and the site basics."
     },
     {
       "id": "later",
@@ -29,7 +29,7 @@
       "id": "done",
       "label": "Done",
       "short": "Done",
-      "hint": "Registered on 8 Nov 2026."
+      "hint": "Registered 8 Nov 2026, set up since."
     }
   ],
   "tasks": [
@@ -64,126 +64,6 @@
       ]
     },
     {
-      "id": "bank",
-      "group": "mon",
-      "title": "Open the bank account",
-      "summary": "NAB Business Everyday, the $0 option. Payments and paying for tools wait on this.",
-      "owner": "Both",
-      "where": "NAB",
-      "cost": "$0 / month",
-      "body": [
-        "It opens online for partnerships. Clients paying “asnew” into an account in a personal name get a name-mismatch warning from their bank, so this matters before the first invoice."
-      ],
-      "steps": [
-        "Apply online with the ABN and the business name.",
-        "Both of you verify your ID.",
-        "Give both of you full access.",
-        "Add the BSB and account number to the invoice template."
-      ],
-      "links": [
-        {
-          "label": "NAB Business Everyday ($0)",
-          "url": "https://www.nab.com.au/business/accounts/transaction-accounts/nab-business-cheque-account"
-        }
-      ]
-    },
-    {
-      "id": "books",
-      "group": "mon",
-      "title": "Set up the books: a spreadsheet",
-      "summary": "No Xero for now. A ledger sheet and a receipts folder meet the ATO's rules.",
-      "badge": "From Dan",
-      "where": "Sheet · Claude",
-      "cost": "Free",
-      "body": [
-        "The ATO doesn't require accounting software. Records must be kept for five years, in English, and explain every transaction.",
-        "Keep a tax invoice for any purchase over $82.50 including GST, or you can't claim that GST back.",
-        "Look at Xero again after five jobs, when you review prices. Its bank feed is the main thing it would save you."
-      ],
-      "steps": [
-        "Make the ledger: date, who, what, category, ex GST, GST, total, money in or out, receipt link. Claude can set it up.",
-        "Make a shared receipts folder. One file per receipt, named date-supplier-amount.",
-        "Log everything at least monthly, from the business account."
-      ],
-      "links": [
-        {
-          "label": "ATO: record keeping for business",
-          "url": "https://www.ato.gov.au/businesses-and-organisations/preparing-lodging-and-paying/record-keeping-for-business/index-record-keeping-for-business"
-        },
-        {
-          "label": "ATO: when you can claim a GST credit",
-          "url": "https://www.ato.gov.au/businesses-and-organisations/gst-excise-and-indirect-taxes/gst/claiming-gst-credits/when-you-can-claim-a-gst-credit"
-        }
-      ]
-    },
-    {
-      "id": "search",
-      "group": "mon",
-      "title": "Clear the name and the new mark",
-      "summary": "Trade mark search for asnew and the new block mark. Before the mailers go to print.",
-      "where": "IP Australia",
-      "cost": "Free",
-      "steps": [
-        "Search “asnew”, “as new” and “anew” in classes 35 and 42.",
-        "Run the new block mark (filleted A and N) through the image search.",
-        "Note anything close and send it to Claude for a read."
-      ],
-      "links": [
-        {
-          "label": "IP Australia: search existing trade marks",
-          "url": "https://ipaustralia.gov.au/trade-marks/search-existing-trade-marks"
-        }
-      ]
-    },
-    {
-      "id": "phone",
-      "group": "mon",
-      "title": "Get a business phone number",
-      "summary": "For the bank, the ATO, suppliers and clients once they've signed. Not on the website.",
-      "badge": "New",
-      "where": "Telco",
-      "cost": "~$10–20 / month",
-      "body": [
-        "Prospects still come in by website and email. The number is for accounts, verification codes and client calls once a job has started."
-      ],
-      "steps": [
-        "Pick one: a prepaid eSIM on one of your phones, or a cheap prepaid SIM in a spare phone.",
-        "Decide who carries it, or forward it to both of you.",
-        "Use it for the bank account, the ABR and ASIC records, and the business accounts.",
-        "Add it to the email signature and the order email, not the website."
-      ]
-    },
-    {
-      "id": "invoice",
-      "group": "mon",
-      "title": "Tax invoice template",
-      "summary": "In the asnew brand. Claude can make it.",
-      "where": "Claude",
-      "cost": "—",
-      "steps": [
-        "Say “Tax invoice”, and show the ABN, date, what was sold and the GST.",
-        "From $1,000, add the client's name or ABN.",
-        "Add the bank details once the account is open."
-      ]
-    },
-    {
-      "id": "agreement",
-      "group": "tue",
-      "title": "Partnership agreement",
-      "summary": "Write down what you've already agreed.",
-      "owner": "Both",
-      "where": "You two",
-      "cost": "—",
-      "steps": [
-        "50/50 profit, paid quarterly.",
-        "$1,000 limit on spending alone.",
-        "Either of you can sign client agreements.",
-        "The name, the mark and the work belong to the business.",
-        "The rule that keeps Dan's day job clear.",
-        "What happens if one of you leaves. A change of partners can mean a new ABN and TFN."
-      ]
-    },
-    {
       "id": "lawyer",
       "group": "tue",
       "title": "One lawyer quote",
@@ -192,17 +72,6 @@
       "cost": "Quote",
       "body": [
         "Cheaper than two separate jobs. Or start from Arts Law templates."
-      ]
-    },
-    {
-      "id": "accountant",
-      "group": "tue",
-      "title": "One accountant call (optional)",
-      "summary": "How much to set aside for tax, and a check of the spreadsheet set-up.",
-      "where": "Accountant",
-      "cost": "Quote",
-      "body": [
-        "The partnership pays no income tax itself. Each of you pays tax on your half, so set part of each payout aside. The ATO may put you on PAYG instalments after the first return."
       ]
     },
     {
@@ -265,15 +134,6 @@
         "Trade mark search for asnew and the new mark, before launch.",
         "Then tell Claude to build: launch homepage, How it works, FAQ, About, Menu, Start, Sent, Privacy, Terms, 404, favicon and share images."
       ]
-    },
-    {
-      "id": "payments",
-      "group": "later",
-      "title": "Card payments",
-      "summary": "A Stripe payment link per order for the concept fee.",
-      "when": "After the bank",
-      "where": "Stripe",
-      "cost": "% per payment"
     },
     {
       "id": "pay-link",
@@ -569,6 +429,152 @@
       "summary": "Instagram and LinkedIn handles claimed, with studio@asnew.au as the login.",
       "where": "Instagram · LinkedIn",
       "cost": "Free",
+      "done": true
+    },
+    {
+      "id": "bank",
+      "group": "done",
+      "title": "Open the bank account",
+      "summary": "NAB Business Everyday, the $0 option. Payments and paying for tools wait on this.",
+      "owner": "Both",
+      "where": "NAB",
+      "cost": "$0 / month",
+      "body": [
+        "It opens online for partnerships. Clients paying “asnew” into an account in a personal name get a name-mismatch warning from their bank, so this matters before the first invoice."
+      ],
+      "steps": [
+        "Apply online with the ABN and the business name.",
+        "Both of you verify your ID.",
+        "Give both of you full access.",
+        "Add the BSB and account number to the invoice template."
+      ],
+      "links": [
+        {
+          "label": "NAB Business Everyday ($0)",
+          "url": "https://www.nab.com.au/business/accounts/transaction-accounts/nab-business-cheque-account"
+        }
+      ],
+      "done": true
+    },
+    {
+      "id": "books",
+      "group": "done",
+      "title": "Set up the books: a spreadsheet",
+      "summary": "No Xero for now. A ledger sheet and a receipts folder meet the ATO's rules.",
+      "where": "Sheet · Claude",
+      "cost": "Free",
+      "body": [
+        "The ATO doesn't require accounting software. Records must be kept for five years, in English, and explain every transaction.",
+        "Keep a tax invoice for any purchase over $82.50 including GST, or you can't claim that GST back.",
+        "Look at Xero again after five jobs, when you review prices. Its bank feed is the main thing it would save you."
+      ],
+      "steps": [
+        "Make the ledger: date, who, what, category, ex GST, GST, total, money in or out, receipt link. Claude can set it up.",
+        "Make a shared receipts folder. One file per receipt, named date-supplier-amount.",
+        "Log everything at least monthly, from the business account."
+      ],
+      "links": [
+        {
+          "label": "ATO: record keeping for business",
+          "url": "https://www.ato.gov.au/businesses-and-organisations/preparing-lodging-and-paying/record-keeping-for-business/index-record-keeping-for-business"
+        },
+        {
+          "label": "ATO: when you can claim a GST credit",
+          "url": "https://www.ato.gov.au/businesses-and-organisations/gst-excise-and-indirect-taxes/gst/claiming-gst-credits/when-you-can-claim-a-gst-credit"
+        }
+      ],
+      "done": true
+    },
+    {
+      "id": "search",
+      "group": "done",
+      "title": "Clear the name and the new mark",
+      "summary": "Trade mark search for asnew and the new block mark. Before the mailers go to print.",
+      "where": "IP Australia",
+      "cost": "Free",
+      "steps": [
+        "Search “asnew”, “as new” and “anew” in classes 35 and 42.",
+        "Run the new block mark (filleted A and N) through the image search.",
+        "Note anything close and send it to Claude for a read."
+      ],
+      "links": [
+        {
+          "label": "IP Australia: search existing trade marks",
+          "url": "https://ipaustralia.gov.au/trade-marks/search-existing-trade-marks"
+        }
+      ],
+      "done": true
+    },
+    {
+      "id": "phone",
+      "group": "done",
+      "title": "Get a business phone number",
+      "summary": "For the bank, the ATO, suppliers and clients once they've signed. Not on the website.",
+      "where": "Telco",
+      "cost": "~$10–20 / month",
+      "body": [
+        "Prospects still come in by website and email. The number is for accounts, verification codes and client calls once a job has started."
+      ],
+      "steps": [
+        "Pick one: a prepaid eSIM on one of your phones, or a cheap prepaid SIM in a spare phone.",
+        "Decide who carries it, or forward it to both of you.",
+        "Use it for the bank account, the ABR and ASIC records, and the business accounts.",
+        "Add it to the email signature and the order email, not the website."
+      ],
+      "done": true
+    },
+    {
+      "id": "invoice",
+      "group": "done",
+      "title": "Tax invoice template",
+      "summary": "In the asnew brand. Claude can make it.",
+      "where": "Claude",
+      "cost": "—",
+      "steps": [
+        "Say “Tax invoice”, and show the ABN, date, what was sold and the GST.",
+        "From $1,000, add the client's name or ABN.",
+        "Add the bank details once the account is open."
+      ],
+      "done": true
+    },
+    {
+      "id": "agreement",
+      "group": "done",
+      "title": "Partnership agreement",
+      "summary": "Write down what you've already agreed.",
+      "owner": "Both",
+      "where": "You two",
+      "cost": "—",
+      "steps": [
+        "50/50 profit, paid quarterly.",
+        "$1,000 limit on spending alone.",
+        "Either of you can sign client agreements.",
+        "The name, the mark and the work belong to the business.",
+        "The rule that keeps Dan's day job clear.",
+        "What happens if one of you leaves. A change of partners can mean a new ABN and TFN."
+      ],
+      "done": true
+    },
+    {
+      "id": "accountant",
+      "group": "done",
+      "title": "One accountant call (optional)",
+      "summary": "How much to set aside for tax, and a check of the spreadsheet set-up.",
+      "where": "Accountant",
+      "cost": "Quote",
+      "body": [
+        "The partnership pays no income tax itself. Each of you pays tax on your half, so set part of each payout aside. The ATO may put you on PAYG instalments after the first return."
+      ],
+      "done": true
+    },
+    {
+      "id": "payments",
+      "group": "done",
+      "title": "Card payments",
+      "summary": "A Stripe payment link per order for the concept fee.",
+      "when": "After the bank",
+      "where": "Stripe",
+      "cost": "% per payment",
       "done": true
     }
   ]
