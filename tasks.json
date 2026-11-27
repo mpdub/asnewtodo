@@ -1,17 +1,17 @@
 {
-  "updated": "27 Nov 2026, 09:05",
+  "updated": "27 Nov 2026, 16:00",
   "groups": [
     {
       "id": "mon",
       "label": "Next up",
       "short": "Next",
-      "hint": "RAM and the contact email."
+      "hint": "Quick ones. RAM first."
     },
     {
       "id": "tue",
       "label": "Then",
       "short": "Then",
-      "hint": "Quotes, tools and the site basics."
+      "hint": "Quotes, tools and the mailer kit."
     },
     {
       "id": "later",
@@ -89,13 +89,46 @@
       "id": "tools",
       "group": "tue",
       "title": "Put tools on the business",
-      "summary": "Pay subscriptions and the mailer kit from the business account.",
+      "summary": "Pay subscriptions from the business account. Log every receipt.",
       "where": "Bank",
       "cost": "—",
       "steps": [
-        "Move Claude, Framer (for client sites), domains and any paid fonts to the business card.",
-        "Buy the mailer kit (printer, cutting machine) on the business account.",
-        "Save every tax invoice to the receipts folder to claim the GST back."
+        "Move Claude, Google Workspace, Porkbun, Framer (for client sites) and any paid fonts to the business card.",
+        "Send each receipt to Claude: it's renamed, filed in the asnew receipts folder and logged in the Expenses Sheet.",
+        "Anything either of you paid personally goes in the Sheet too, to be paid back."
+      ]
+    },
+    {
+      "id": "mailer-kit",
+      "group": "tue",
+      "title": "Mailer kit and a test run",
+      "badge": "New",
+      "summary": "Silhouette Cameo 5 for the press-out card. Printing at a local print shop, not an EcoTank.",
+      "where": "Craft Online · print shop",
+      "cost": "~$300–400 + printing",
+      "body": [
+        "A print shop handles heavy uncoated card and brand colours better than an EcoTank, with no upfront cost. Revisit a printer only if you're sending several a week."
+      ],
+      "steps": [
+        "Buy the standard Cameo 5, not the Alpha, on the business card.",
+        "Find a print shop that does single sheets of heavy stock quickly, and ask them to print the Silhouette registration marks.",
+        "Give them the print-safe lime: CMYK 22/0/76/0.",
+        "Cut a test sheet of the real stock. 350gsm may need two passes.",
+        "Post a few to yourselves to check the ties hold through sorting."
+      ]
+    },
+    {
+      "id": "comau",
+      "group": "tue",
+      "title": "asnew.com.au, and let asnew.studio go",
+      "badge": "New",
+      "summary": "Register asnew.com.au and redirect it to asnew.au. Don't renew asnew.studio.",
+      "where": "Porkbun · Cloudflare",
+      "cost": "~$20–30 / yr",
+      "steps": [
+        "Register asnew.com.au. It's open to you because it matches the business name.",
+        "Add it to Cloudflare and redirect it to asnew.au.",
+        "Turn off auto-renew on asnew.studio once nothing points at it."
       ]
     },
     {
@@ -131,7 +164,6 @@
         "Pick the About footage frame it opens and rests on (launch homepage, About, phone About).",
         "Email when someone sends an order (the task below), so SEND IT works.",
         "Privacy and Terms: update after the lawyer's review, then add the date.",
-        "Trade mark search for asnew and the new mark, before launch.",
         "Then tell Claude to build: launch homepage, How it works, FAQ, About, Menu, Start, Sent, Privacy, Terms, 404, favicon and share images."
       ]
     },
@@ -153,7 +185,7 @@
       "id": "contact",
       "group": "mon",
       "title": "Switch the contact email to studio@",
-      "summary": "The registrations list Dan's personal Outlook. Change it to studio@asnew.au.",
+      "summary": "The registrations list Dan's personal Outlook. Change it to studio@asnew.au, and add the studio phone.",
       "badge": "New",
       "when": "Now",
       "where": "ABR · ASIC",
@@ -165,6 +197,7 @@
       "steps": [
         "ABN, GST and TFN: update the email in Online services for business once RAM is linked, or on the ABR site.",
         "Business name: update the holder's contact details in ASIC's online services.",
+        "Add the studio phone, 0485 674 325, to both while you're there.",
         "Check both registers show the new email."
       ],
       "links": [
@@ -176,6 +209,37 @@
           "label": "ASIC: change business name holder details",
           "url": "https://www.asic.gov.au/for-business-and-companies/business-names/change-business-name-details/change-business-name-holder-details/"
         }
+      ]
+    },
+    {
+      "id": "vco-income",
+      "group": "mon",
+      "title": "Record VCO's payment as asnew income",
+      "badge": "New",
+      "summary": "It went into Martin's NZ account, but it's still asnew's money: it goes in the ledger, the BAS and the split.",
+      "where": "Expenses Sheet",
+      "cost": "—",
+      "body": [
+        "VCO's invoice 001-1 is NZD 4,500, GST-free as an export. Cash basis, so it counts in the quarter the money lands."
+      ],
+      "steps": [
+        "When it's paid, log it in the asnew ledger: the date it landed, the AUD amount received, GST-free.",
+        "Move the AUD amount into the NAB account, or note it as held by Martin for the quarterly split.",
+        "Add VCO's contact name and email to the job in the Jobs tracker."
+      ]
+    },
+    {
+      "id": "payee",
+      "group": "mon",
+      "title": "Set NAB as the default account on invoices",
+      "badge": "New",
+      "summary": "In the Jobs tracker's invoice settings, with the bank's full account name.",
+      "where": "Jobs tracker",
+      "cost": "—",
+      "steps": [
+        "New invoice → set who gets paid to the NAB account, using the full account name the bank shows.",
+        "Save it as the default.",
+        "Add “Our bank details never change by email” to the invoice note."
       ]
     },
     {
@@ -258,26 +322,30 @@
       "id": "terms",
       "group": "later",
       "title": "Client terms",
-      "summary": "Settle the open decisions, then the lawyer's review.",
+      "summary": "Most is decided. Settle tweak rounds, then the lawyer's review.",
       "when": "After the quote",
       "where": "Lawyer",
       "cost": "—",
       "steps": [
-        "Concept fee.",
-        "Invoice terms.",
-        "Rounds of tweaks.",
+        "Rounds of tweaks: one at each check, or two.",
+        "Invoice terms: 7 days, as the tracker defaults to?",
+        "If a client goes quiet: how long the job stays paused.",
         "Lawyer's review."
+      ],
+      "body": [
+        "Decided: concept fee $2,500 +GST by card, the rest by bank transfer when final files are delivered; a new concept costs another concept fee; 14 days of free fixes after handover; websites in Framer only; the $500 referral bonus."
       ]
     },
     {
       "id": "bas",
       "group": "diary",
       "title": "First BAS",
-      "summary": "October to December 2026. Lodge it even if you made nothing.",
+      "summary": "October to December 2026. Probably not nil: VCO's payment goes on it.",
       "when": "28 Feb 2027",
       "where": "ATO",
       "cost": "Free",
       "body": [
+        "If VCO pays before 31 Dec, the BAS shows it as a GST-free export sale, so the nil-by-phone line can't be used. Lodge it in Online services for business once RAM is linked.",
         "Registered for GST means a BAS every quarter, nil or not."
       ],
       "steps": [
@@ -290,6 +358,19 @@
           "label": "ATO: lodging in Online services for business",
           "url": "https://www.ato.gov.au/General/Online-services/Businesses/Lodgments-in-Online-services-for-business/"
         }
+      ]
+    },
+    {
+      "id": "workspace",
+      "group": "diary",
+      "title": "Google Workspace trial ends",
+      "badge": "New",
+      "summary": "Add billing on the business card before the 14-day trial ends, with a promo code if you have one.",
+      "when": "Early Dec 2026",
+      "where": "Google Admin",
+      "cost": "~$10 / month",
+      "body": [
+        "A promo code only works for new customers and goes in at billing set-up. The discount won't show in the order summary."
       ]
     },
     {
@@ -322,7 +403,7 @@
       "id": "dmarc",
       "group": "diary",
       "title": "Tighten DMARC",
-      "summary": "Once studio@ mail keeps passing, change the _dmarc record in Porkbun from p=none to p=quarantine.",
+      "summary": "Once studio@ mail keeps passing, change the _dmarc record in Cloudflare DNS from p=none to p=quarantine.",
       "when": "Mid Dec 2026",
       "where": "Porkbun",
       "cost": "Free"
@@ -460,7 +541,7 @@
       "id": "books",
       "group": "done",
       "title": "Set up the books: a spreadsheet",
-      "summary": "No Xero for now. A ledger sheet and a receipts folder meet the ATO's rules.",
+      "summary": "The asnew Expenses Sheet and the asnew receipts folder in Drive. No Xero for now.",
       "where": "Sheet · Claude",
       "cost": "Free",
       "body": [
@@ -571,11 +652,14 @@
       "id": "payments",
       "group": "done",
       "title": "Card payments",
-      "summary": "A Stripe payment link per order for the concept fee.",
+      "summary": "Card for the concept fee only, through Stripe. The rest is bank transfer.",
       "when": "After the bank",
       "where": "Stripe",
       "cost": "% per payment",
-      "done": true
+      "done": true,
+      "body": [
+        "Card surcharges are banned from 1 Oct 2026, so the Stripe fee is absorbed. That's why card stops at the concept fee."
+      ]
     }
   ]
 }
